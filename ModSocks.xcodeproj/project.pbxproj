@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* ModSocksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ModSocksAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		E8647D070E928ADB003D7CBA /* auth.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D060E928ADB003D7CBA /* auth.c */; };
+		E8647D240E928C5D003D7CBA /* proxy.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D230E928C5D003D7CBA /* proxy.c */; };
+		E8647D280E928C78003D7CBA /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D270E928C78003D7CBA /* base64.c */; };
+		E8647D2B0E928CA5003D7CBA /* ftp.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D2A0E928CA5003D7CBA /* ftp.c */; };
+		E8647D2E0E928CBA003D7CBA /* ntlm.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D2D0E928CBA003D7CBA /* ntlm.c */; };
+		E8647D310E928CD0003D7CBA /* pop3p.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D300E928CD0003D7CBA /* pop3p.c */; };
+		E8647D340E928CE0003D7CBA /* mycrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D330E928CE0003D7CBA /* mycrypt.c */; };
+		E8647D470E928D4E003D7CBA /* ftppr.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D460E928D4E003D7CBA /* ftppr.c */; };
+		E8647D670E928DE7003D7CBA /* md4.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D600E928DE7003D7CBA /* md4.c */; };
+		E8647D680E928DE7003D7CBA /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D620E928DE7003D7CBA /* md5.c */; };
+		E8647D690E928DE7003D7CBA /* regex.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D640E928DE7003D7CBA /* regex.c */; };
+		E8647D6A0E928DE7003D7CBA /* smbdes.c in Sources */ = {isa = PBXBuildFile; fileRef = E8647D660E928DE7003D7CBA /* smbdes.c */; };
+		E8647E990E92A460003D7CBA /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8647E980E92A460003D7CBA /* LabelCell.m */; };
+		E8647EBB0E92A61C003D7CBA /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8647EBA0E92A61C003D7CBA /* SwitchCell.m */; };
+		E86868A80E8D8C3300302F56 /* socks.c in Sources */ = {isa = PBXBuildFile; fileRef = E86868A70E8D8C3300302F56 /* socks.c */; };
+		E86868AF0E8D8D7400302F56 /* Server.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86868AE0E8D8D7400302F56 /* Server.xib */; };
+		E86868BD0E8D8DC200302F56 /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86868BC0E8D8DC200302F56 /* ServerController.m */; };
+		E86868DF0E8D8E9D00302F56 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = E86868DE0E8D8E9D00302F56 /* common.c */; };
+		E86868E70E8D8EC700302F56 /* sockgetchar.c in Sources */ = {isa = PBXBuildFile; fileRef = E86868E60E8D8EC700302F56 /* sockgetchar.c */; };
+		E86868EF0E8D8EDA00302F56 /* sockmap.c in Sources */ = {isa = PBXBuildFile; fileRef = E86868EE0E8D8EDA00302F56 /* sockmap.c */; };
+		E881A3740E901492006821C9 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E881A3730E901492006821C9 /* SettingController.m */; };
+		E881A3C00E901CA5006821C9 /* FieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E881A3BF0E901CA5006821C9 /* FieldCell.m */; };
+		E881A3E30E902105006821C9 /* MSPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = E881A3E20E902105006821C9 /* MSPrefs.m */; };
+		E881A44A0E902AE6006821C9 /* ModSocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E881A4490E902AE6006821C9 /* ModSocks.png */; };
+		E889ED1D0E8D10820036E172 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E889ED1C0E8D10820036E172 /* NetworkTool.m */; };
+		E8AA243F0E8FE2D300CFA0B2 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = E8AA243E0E8FE2D300CFA0B2 /* setting.png */; };
+		E8AA24690E8FF26E00CFA0B2 /* server.png in Resources */ = {isa = PBXBuildFile; fileRef = E8AA24680E8FF26E00CFA0B2 /* server.png */; };
+		E8EC9B720E8EDFB600B3206A /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EC9B710E8EDFB600B3206A /* Settings.xib */; };
+		E8EC9B810E8EE27800B3206A /* back.tif in Resources */ = {isa = PBXBuildFile; fileRef = E8EC9B800E8EE27800B3206A /* back.tif */; };
+		E8EC9B850E8EE32800B3206A /* butNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EC9B840E8EE32800B3206A /* butNormal.png */; };
+		E8EC9B940E8EE50B00B3206A /* butHightlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EC9B930E8EE50B00B3206A /* butHightlighted.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* ModSocksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModSocksAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* ModSocksAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModSocksAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* ModSocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModSocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* ModSocks_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModSocks_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8647D060E928ADB003D7CBA /* auth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = auth.c; path = "Extern/3proxy-0.5.3k/src/auth.c"; sourceTree = "<group>"; };
+		E8647D230E928C5D003D7CBA /* proxy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = proxy.c; path = "Extern/3proxy-0.5.3k/src/proxy.c"; sourceTree = "<group>"; };
+		E8647D270E928C78003D7CBA /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = base64.c; path = "Extern/3proxy-0.5.3k/src/base64.c"; sourceTree = "<group>"; };
+		E8647D2A0E928CA5003D7CBA /* ftp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftp.c; path = "Extern/3proxy-0.5.3k/src/ftp.c"; sourceTree = "<group>"; };
+		E8647D2D0E928CBA003D7CBA /* ntlm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ntlm.c; path = "Extern/3proxy-0.5.3k/src/ntlm.c"; sourceTree = "<group>"; };
+		E8647D300E928CD0003D7CBA /* pop3p.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pop3p.c; path = "Extern/3proxy-0.5.3k/src/pop3p.c"; sourceTree = "<group>"; };
+		E8647D330E928CE0003D7CBA /* mycrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mycrypt.c; path = "Extern/3proxy-0.5.3k/src/mycrypt.c"; sourceTree = "<group>"; };
+		E8647D460E928D4E003D7CBA /* ftppr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftppr.c; path = "Extern/3proxy-0.5.3k/src/ftppr.c"; sourceTree = "<group>"; };
+		E8647D600E928DE7003D7CBA /* md4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md4.c; sourceTree = "<group>"; };
+		E8647D610E928DE7003D7CBA /* md4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
+		E8647D620E928DE7003D7CBA /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		E8647D630E928DE7003D7CBA /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		E8647D640E928DE7003D7CBA /* regex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = regex.c; sourceTree = "<group>"; };
+		E8647D650E928DE7003D7CBA /* regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regex.h; sourceTree = "<group>"; };
+		E8647D660E928DE7003D7CBA /* smbdes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = smbdes.c; sourceTree = "<group>"; };
+		E8647E970E92A460003D7CBA /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
+		E8647E980E92A460003D7CBA /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		E8647EB90E92A61C003D7CBA /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		E8647EBA0E92A61C003D7CBA /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		E86868A70E8D8C3300302F56 /* socks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = socks.c; path = "Extern/3proxy-0.5.3k/src/socks.c"; sourceTree = "<group>"; };
+		E86868AA0E8D8C3C00302F56 /* proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = proxy.h; path = "Extern/3proxy-0.5.3k/src/proxy.h"; sourceTree = "<group>"; };
+		E86868AE0E8D8D7400302F56 /* Server.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Server.xib; sourceTree = "<group>"; };
+		E86868BB0E8D8DC200302F56 /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
+		E86868BC0E8D8DC200302F56 /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
+		E86868DE0E8D8E9D00302F56 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = common.c; path = "Extern/3proxy-0.5.3k/src/common.c"; sourceTree = "<group>"; };
+		E86868E60E8D8EC700302F56 /* sockgetchar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sockgetchar.c; path = "Extern/3proxy-0.5.3k/src/sockgetchar.c"; sourceTree = "<group>"; };
+		E86868EE0E8D8EDA00302F56 /* sockmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sockmap.c; path = "Extern/3proxy-0.5.3k/src/sockmap.c"; sourceTree = "<group>"; };
+		E881A3720E901492006821C9 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		E881A3730E901492006821C9 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		E881A3BE0E901CA5006821C9 /* FieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldCell.h; sourceTree = "<group>"; };
+		E881A3BF0E901CA5006821C9 /* FieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldCell.m; sourceTree = "<group>"; };
+		E881A3E10E902105006821C9 /* MSPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPrefs.h; sourceTree = "<group>"; };
+		E881A3E20E902105006821C9 /* MSPrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPrefs.m; sourceTree = "<group>"; };
+		E881A4490E902AE6006821C9 /* ModSocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ModSocks.png; path = Media/Icon/ModSocks.png; sourceTree = "<group>"; };
+		E889ED1B0E8D10820036E172 /* NetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
+		E889ED1C0E8D10820036E172 /* NetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTool.m; sourceTree = "<group>"; };
+		E8AA243E0E8FE2D300CFA0B2 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = Media/TabBar/setting.png; sourceTree = "<group>"; };
+		E8AA24680E8FF26E00CFA0B2 /* server.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = server.png; path = Media/TabBar/server.png; sourceTree = "<group>"; };
+		E8EC9B710E8EDFB600B3206A /* Settings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
+		E8EC9B800E8EE27800B3206A /* back.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = back.tif; path = Media/Back/back.tif; sourceTree = "<group>"; };
+		E8EC9B840E8EE32800B3206A /* butNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = butNormal.png; path = Media/Button/butNormal.png; sourceTree = "<group>"; };
+		E8EC9B930E8EE50B00B3206A /* butHightlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = butHightlighted.png; path = Media/Button/butHightlighted.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E881A3750E9014A7006821C9 /* Tools */,
+				E86868BB0E8D8DC200302F56 /* ServerController.h */,
+				E86868BC0E8D8DC200302F56 /* ServerController.m */,
+				E881A3720E901492006821C9 /* SettingController.h */,
+				E881A3730E901492006821C9 /* SettingController.m */,
+				1D3623240D0F684500981E51 /* ModSocksAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ModSocksAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* ModSocks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* ModSocks */ = {
+			isa = PBXGroup;
+			children = (
+				E86868A40E8D8C2400302F56 /* Extern */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = ModSocks;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* ModSocks_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E881A4490E902AE6006821C9 /* ModSocks.png */,
+				E8AA24540E8FE42900CFA0B2 /* Interface */,
+				E8AA24530E8FE41F00CFA0B2 /* TabBar */,
+				E8EC9B800E8EE27800B3206A /* back.tif */,
+				E8EC9B840E8EE32800B3206A /* butNormal.png */,
+				E8EC9B930E8EE50B00B3206A /* butHightlighted.png */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8647D5F0E928DE7003D7CBA /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				E8647D600E928DE7003D7CBA /* md4.c */,
+				E8647D610E928DE7003D7CBA /* md4.h */,
+				E8647D620E928DE7003D7CBA /* md5.c */,
+				E8647D630E928DE7003D7CBA /* md5.h */,
+				E8647D640E928DE7003D7CBA /* regex.c */,
+				E8647D650E928DE7003D7CBA /* regex.h */,
+				E8647D660E928DE7003D7CBA /* smbdes.c */,
+			);
+			name = libs;
+			path = "Extern/3proxy-0.5.3k/src/libs";
+			sourceTree = "<group>";
+		};
+		E86868A40E8D8C2400302F56 /* Extern */ = {
+			isa = PBXGroup;
+			children = (
+				E880EF840E912719008F76E5 /* 3proxy */,
+			);
+			name = Extern;
+			sourceTree = "<group>";
+		};
+		E880EF840E912719008F76E5 /* 3proxy */ = {
+			isa = PBXGroup;
+			children = (
+				E86868AA0E8D8C3C00302F56 /* proxy.h */,
+				E86868A70E8D8C3300302F56 /* socks.c */,
+				E86868DE0E8D8E9D00302F56 /* common.c */,
+				E86868E60E8D8EC700302F56 /* sockgetchar.c */,
+				E86868EE0E8D8EDA00302F56 /* sockmap.c */,
+				E8647D060E928ADB003D7CBA /* auth.c */,
+				E8647D230E928C5D003D7CBA /* proxy.c */,
+				E8647D270E928C78003D7CBA /* base64.c */,
+				E8647D2A0E928CA5003D7CBA /* ftp.c */,
+				E8647D460E928D4E003D7CBA /* ftppr.c */,
+				E8647D2D0E928CBA003D7CBA /* ntlm.c */,
+				E8647D300E928CD0003D7CBA /* pop3p.c */,
+				E8647D330E928CE0003D7CBA /* mycrypt.c */,
+				E8647D5F0E928DE7003D7CBA /* libs */,
+			);
+			name = 3proxy;
+			sourceTree = "<group>";
+		};
+		E881A3750E9014A7006821C9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E881A3BD0E901CA5006821C9 /* Cells */,
+				E889ED1B0E8D10820036E172 /* NetworkTool.h */,
+				E889ED1C0E8D10820036E172 /* NetworkTool.m */,
+				E881A3E10E902105006821C9 /* MSPrefs.h */,
+				E881A3E20E902105006821C9 /* MSPrefs.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		E881A3BD0E901CA5006821C9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E881A3BE0E901CA5006821C9 /* FieldCell.h */,
+				E881A3BF0E901CA5006821C9 /* FieldCell.m */,
+				E8647E970E92A460003D7CBA /* LabelCell.h */,
+				E8647E980E92A460003D7CBA /* LabelCell.m */,
+				E8647EB90E92A61C003D7CBA /* SwitchCell.h */,
+				E8647EBA0E92A61C003D7CBA /* SwitchCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E8AA24530E8FE41F00CFA0B2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E8AA24680E8FF26E00CFA0B2 /* server.png */,
+				E8AA243E0E8FE2D300CFA0B2 /* setting.png */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		E8AA24540E8FE42900CFA0B2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				E86868AE0E8D8D7400302F56 /* Server.xib */,
+				E8EC9B710E8EDFB600B3206A /* Settings.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* ModSocks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ModSocks" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModSocks;
+			productName = ModSocks;
+			productReference = 1D6058910D05DD3D006BFB54 /* ModSocks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ModSocks" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* ModSocks */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* ModSocks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				E86868AF0E8D8D7400302F56 /* Server.xib in Resources */,
+				E8EC9B720E8EDFB600B3206A /* Settings.xib in Resources */,
+				E8EC9B810E8EE27800B3206A /* back.tif in Resources */,
+				E8EC9B850E8EE32800B3206A /* butNormal.png in Resources */,
+				E8EC9B940E8EE50B00B3206A /* butHightlighted.png in Resources */,
+				E8AA243F0E8FE2D300CFA0B2 /* setting.png in Resources */,
+				E8AA24690E8FF26E00CFA0B2 /* server.png in Resources */,
+				E881A44A0E902AE6006821C9 /* ModSocks.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* ModSocksAppDelegate.m in Sources */,
+				E889ED1D0E8D10820036E172 /* NetworkTool.m in Sources */,
+				E86868A80E8D8C3300302F56 /* socks.c in Sources */,
+				E86868BD0E8D8DC200302F56 /* ServerController.m in Sources */,
+				E86868DF0E8D8E9D00302F56 /* common.c in Sources */,
+				E86868E70E8D8EC700302F56 /* sockgetchar.c in Sources */,
+				E86868EF0E8D8EDA00302F56 /* sockmap.c in Sources */,
+				E881A3740E901492006821C9 /* SettingController.m in Sources */,
+				E881A3C00E901CA5006821C9 /* FieldCell.m in Sources */,
+				E881A3E30E902105006821C9 /* MSPrefs.m in Sources */,
+				E8647D070E928ADB003D7CBA /* auth.c in Sources */,
+				E8647D240E928C5D003D7CBA /* proxy.c in Sources */,
+				E8647D280E928C78003D7CBA /* base64.c in Sources */,
+				E8647D2B0E928CA5003D7CBA /* ftp.c in Sources */,
+				E8647D2E0E928CBA003D7CBA /* ntlm.c in Sources */,
+				E8647D310E928CD0003D7CBA /* pop3p.c in Sources */,
+				E8647D340E928CE0003D7CBA /* mycrypt.c in Sources */,
+				E8647D470E928D4E003D7CBA /* ftppr.c in Sources */,
+				E8647D670E928DE7003D7CBA /* md4.c in Sources */,
+				E8647D680E928DE7003D7CBA /* md5.c in Sources */,
+				E8647D690E928DE7003D7CBA /* regex.c in Sources */,
+				E8647D6A0E928DE7003D7CBA /* smbdes.c in Sources */,
+				E8647E990E92A460003D7CBA /* LabelCell.m in Sources */,
+				E8647EBB0E92A61C003D7CBA /* SwitchCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ModSocks_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = ModSocks;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ModSocks_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = ModSocks;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6BC8F31B-B668-4926-ACF8-70D683FE263E";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PROVISIONING_PROFILE = "6BC8F31B-B668-4926-ACF8-70D683FE263E";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ModSocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ModSocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
