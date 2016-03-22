@@ -23,14 +23,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SettingController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
-{
-	IBOutlet UITableView		*table;
-	
-	IBOutlet UIViewController	*secureEdit;
-	IBOutlet UITableView		*secureEditTable;
-}
+@interface SettingController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
+@end
 
+@interface SecureEditController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @end

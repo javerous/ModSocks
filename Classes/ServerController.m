@@ -40,10 +40,10 @@ typedef struct _threadParameters
 	ServerController	*sc;
 } threadParameters;
 
-@interface ServerController (Private)
-	- (void)_serverSocksStoped:(NSString *)reason;
-	- (void)_serverSocksStatus:(NSString *)stat;
-	- (void)_reloadInetTable;
+@interface ServerController ()
+- (void)_serverSocksStoped:(NSString *)reason;
+- (void)_serverSocksStatus:(NSString *)stat;
+- (void)_reloadInetTable;
 @end
 
 
@@ -51,29 +51,14 @@ typedef struct _threadParameters
 
 #pragma mark ViewController Functions
 
-// If we touch the ModSocks title (background image), show credit
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	UITouch *key = [touches anyObject];
-	CGPoint	pt;
-	
-	if (!key)
-		return;
-	
-	pt = [key locationInView:self.view];
-	
-	if (pt.y >= 12 && pt.y <= 56 && pt.x >= 14 && pt.x <= 307)
-	{
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ModSocks" message:@"by Julien-Pierre Avérous\n© 2008 SourceMac"
-								delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-		[alert show];	
-		[alert release];
-	}
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	// Add tap gesture to label.
+	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap)];
+	
+	[titleLabel addGestureRecognizer:tapGesture];
 	
 	// Reload the inet table
 	[self _reloadInetTable];
@@ -88,7 +73,6 @@ typedef struct _threadParameters
 	pthread_mutex_init(&hash_mutex, NULL);
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -98,6 +82,15 @@ typedef struct _threadParameters
 }
 
 #pragma mark IB Actions
+
+- (void)labelTap
+{
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ModSocks" message:@"by Julien-Pierre Avérous\n© 2008 SourceMac" preferredStyle:UIAlertControllerStyleAlert];
+	
+	[alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+	
+	[self presentViewController:alert animated:YES completion:nil];
+}
 
 - (IBAction)socks_start_stop:(id)sender
 {
@@ -277,6 +270,10 @@ typedef struct _threadParameters
 }
 
 
+- (void)dealloc {
+	[titleLabel release];
+	[super dealloc];
+}
 @end
 
 #pragma mark Main Socks thread

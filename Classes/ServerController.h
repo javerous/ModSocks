@@ -25,6 +25,8 @@
 
 @interface ServerController : UIViewController
 {
+	IBOutlet UILabel	*titleLabel;
+	
 	IBOutlet UILabel	*ipLanLabel;
 	IBOutlet UILabel	*ipWanLabel;
 	

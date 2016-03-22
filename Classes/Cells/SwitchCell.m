@@ -24,30 +24,4 @@
 
 @implementation SwitchCell
 
-@synthesize label;
-@synthesize uswitch;
-
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
-{
-	if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier])
-	{
-		CGRect rectLabel = CGRectMake(10, 6, 100, 31);
-		label = [[[UILabel alloc] initWithFrame:rectLabel] autorelease];
-		[self.contentView addSubview:label];
-		
-		CGRect rectSwitch = CGRectMake(rectLabel.size.width, 8, 180, 31);
-		uswitch = [[[UISwitch alloc] initWithFrame:rectSwitch] autorelease];
-		[self.contentView addSubview:uswitch];
-	}
-	
-	return self;
-}
-
-
-- (void)dealloc
-{
-	[super dealloc];
-}
-
-
 @end

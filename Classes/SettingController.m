@@ -22,12 +22,10 @@
 
 #import "SettingController.h"
 #import "FieldCell.h"
-#import "LabelCell.h"
 #import "SwitchCell.h"
 #import "MSPrefs.h"
 
 @implementation SettingController
-
 
 #pragma mark TextField
 
@@ -35,147 +33,80 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField
 {
 	[theTextField resignFirstResponder];
-	
 	return YES;
 }
 
 // Save the field text in the TableView
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-	UITableViewCell *cell;
-	UITableView		*tbl = (UITableView	*)(textField.tag);
-	
-	if (tbl == table)
-	{
-		cell = [tbl cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-		if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
-			[[MSPrefs shared] setInt:[textField.text intValue] forKey:@"socks_port"];
-	}
-	else if (tbl == secureEditTable)
-	{
-		cell = [tbl cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-		if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
-			[[MSPrefs shared] setString:textField.text forKey:@"socks_username"];
-		
-		cell = [tbl cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-		if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
-			[[MSPrefs shared] setString:textField.text forKey:@"socks_password"];
-	}
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+
+	if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
+		[[MSPrefs shared] setInt:[textField.text intValue] forKey:@"socks_port"];
 	
 	return YES;
 }
 
 
 #pragma mark SwitchCell
+
 // Save the switch stat in the Tbale View
 - (void)switchChanged:(UISwitch *)swtch
 {
-	UITableViewCell *cell;
-	UITableView		*tbl = (UITableView	*)(swtch.tag);
-	
-	if (tbl == table)
-	{
-		cell = [table cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-		if ([cell isKindOfClass:[SwitchCell class]] && [(SwitchCell *)cell uswitch] == swtch)
-			[[MSPrefs shared] setBool:swtch.on forKey:@"socks_secure"];
-	}
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+
+	if ([cell isKindOfClass:[SwitchCell class]] && [(SwitchCell *)cell uswitch] == swtch)
+		[[MSPrefs shared] setBool:swtch.on forKey:@"socks_secure"];
 }
 
+
 #pragma mark TableView
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView
 {
-	if (aTableView == table)
-		return 1;
-	else if (aTableView == secureEditTable)
-		return 1;
-	
 	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
 {
-	if (aTableView == table)
-		return 2;
-	else if (aTableView == secureEditTable)
-		return 2;
-	
-	return 0;
+	return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (aTableView == table)
+	switch (indexPath.row)
 	{
-		switch (indexPath.row)
+		case 0: // Port
 		{
-			case 0: // Port
-			{
-				FieldCell *cell = (FieldCell*)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
-				if (cell == nil)
-					cell = [[[FieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FieldCell"] autorelease];
+			FieldCell *cell = (FieldCell *)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
 			
-				[cell.field setDelegate:self];
-				cell.label.text = @"Port";
-				cell.field.text = [NSString stringWithFormat:@"%i", [[MSPrefs shared] getIntForKey:@"socks_port" def:8888]];
-				cell.field.tag = (NSInteger)aTableView;
-				cell.field.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-				cell.field.returnKeyType = UIReturnKeyDone;
-				return cell;
-			}
-		
-			case 1: // Secure
-			{
-				SwitchCell *cell = (SwitchCell*)[aTableView dequeueReusableCellWithIdentifier:@"SwitchCell"];
-				if (cell == nil)
-					cell = [[[SwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SwitchCell"] autorelease];
+			cell.field.delegate = self;
+			cell.label.text = @"Port";
+			cell.field.text = [NSString stringWithFormat:@"%i", [[MSPrefs shared] getIntForKey:@"socks_port" def:8888]];
+			cell.field.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+			cell.field.returnKeyType = UIReturnKeyDone;
 			
-				cell.label.text = @"Secure";
-				
-				cell.uswitch.on = [[MSPrefs shared] getBoolForKey:@"socks_secure" def:NO];
-				cell.uswitch.tag = (NSInteger)aTableView;
-				[cell.uswitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
-			
-				return cell;
-			}
+			return cell;
 		}
-	}
-	else if (aTableView == secureEditTable)
-	{
-		switch (indexPath.row)
+			
+		case 1: // Secure
 		{
-			case 0: // User
-			{
-				FieldCell *cell = (FieldCell*)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
-				if (cell == nil)
-					cell = [[[FieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FieldCell"] autorelease];
-				
-				[cell.field setDelegate:self];
-				cell.label.text = @"Username";
-				cell.field.text = [[MSPrefs shared] getStringForKey:@"socks_username" def:@"user"];
-				cell.field.tag = (NSInteger)aTableView;
-				cell.field.returnKeyType = UIReturnKeyDone;
-				
-				return cell;
-			}
-				
-			case 1: // Password
-			{
-				FieldCell *cell = (FieldCell*)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
-				if (cell == nil)
-					cell = [[[FieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FieldCell"] autorelease];
-				
-				[cell.field setDelegate:self];
-				cell.label.text = @"Password";
-				cell.field.text = [[MSPrefs shared] getStringForKey:@"socks_password" def:@"pass"];
-				cell.field.tag = (NSInteger)aTableView;
-				cell.field.returnKeyType = UIReturnKeyDone;
-				cell.field.secureTextEntry = YES;
-				return cell;
-			}
+			SwitchCell *cell = (SwitchCell *)[aTableView dequeueReusableCellWithIdentifier:@"SwitchCell"];
+			
+			cell.label.text = @"Secure";
+			
+			cell.uswitch.on = [[MSPrefs shared] getBoolForKey:@"socks_secure" def:NO];
+			[cell.uswitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+			
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			
+			return cell;
 		}
 	}
 	
+	
 	UITableViewCell *def = [aTableView dequeueReusableCellWithIdentifier:@"DefCell"];
+	
 	if (!def)
 		def = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefCell"] autorelease];
 	
@@ -186,21 +117,10 @@
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section
 {
-	if (aTableView == table)
+	switch (section)
 	{
-		switch (section)
-		{
-			case 0:
-				return @"Socks";
-		}
-	}
-	else if (aTableView == secureEditTable)
-	{
-		switch (section)
-		{
-			case 0:
-				return @"Authentification";
-		}
+		case 0:
+			return @"Socks";
 	}
 
 	return @"Default";
@@ -208,43 +128,113 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (aTableView == table)
-	{
-		[aTableView deselectRowAtIndexPath:indexPath animated:NO];
+	if (indexPath.row == 1) // Secure row
+		[self performSegueWithIdentifier:@"secure_edit" sender:self];
+}
+
+@end
+
+
+
+@implementation SecureEditController
+
+
+#pragma mark TextField
+
+// If the user press Done, hide the keyboard (by resigning first responder)
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
+	[theTextField resignFirstResponder];
+	return YES;
+}
+
+// Save the field text in the TableView
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+	UITableViewCell *cell;
 	
-		if (indexPath.row == 1) // Secure row
+	cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+	if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
+		[[MSPrefs shared] setString:textField.text forKey:@"socks_username"];
+	
+	cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+	if ([cell isKindOfClass:[FieldCell class]] && [(FieldCell *)cell field] == textField)
+		[[MSPrefs shared] setString:textField.text forKey:@"socks_password"];
+	
+	return YES;
+}
+
+
+#pragma mark TableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView
+{
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
+{
+	return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	switch (indexPath.row)
+	{
+		case 0: // User
 		{
-			secureEdit.title = @"Secure";
-			[self.navigationController pushViewController:secureEdit animated:YES];
+			FieldCell *cell = (FieldCell*)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
+			
+			if (cell == nil)
+				cell = [[[FieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FieldCell"] autorelease];
+			
+			cell.field.delegate = self;
+			cell.label.text = @"Username";
+			cell.field.text = [[MSPrefs shared] getStringForKey:@"socks_username" def:@"user"];
+			cell.field.tag = (NSInteger)aTableView;
+			cell.field.returnKeyType = UIReturnKeyDone;
+			
+			return cell;
+		}
+			
+		case 1: // Password
+		{
+			FieldCell *cell = (FieldCell*)[aTableView dequeueReusableCellWithIdentifier:@"FieldCell"];
+			
+			if (cell == nil)
+				cell = [[[FieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FieldCell"] autorelease];
+			
+			cell.field.delegate = self;
+			cell.label.text = @"Password";
+			cell.field.text = [[MSPrefs shared] getStringForKey:@"socks_password" def:@"pass"];
+			cell.field.tag = (NSInteger)aTableView;
+			cell.field.returnKeyType = UIReturnKeyDone;
+			cell.field.secureTextEntry = YES;
+			
+			return cell;
 		}
 	}
-	else if (aTableView == secureEditTable)
-	{
-		[aTableView deselectRowAtIndexPath:indexPath animated:NO];
-	}
+	
+	
+	UITableViewCell *def = [aTableView dequeueReusableCellWithIdentifier:@"DefCell"];
+	
+	if (!def)
+		def = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DefCell"] autorelease];
+	
+	def.textLabel.text = @"Default cell";
+	
+	return def;
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)aTableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+- (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section
 {
-	if (aTableView == table)
+	switch (section)
 	{
-		if (indexPath.row == 1) // Secure row
-			return UITableViewCellAccessoryDisclosureIndicator;
-		else
-			return UITableViewCellAccessoryNone;
-	}
-	else if (aTableView == secureEditTable)
-	{
-		return UITableViewCellAccessoryNone;
+		case 0:
+			return @"Authentification";
 	}
 	
-	return UITableViewCellAccessoryNone;
+	return @"Default";
 }
-
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end

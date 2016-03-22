@@ -23,12 +23,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SwitchCell : UITableViewCell
-{
-	UILabel		*label;
-	UISwitch	*uswitch;
-}
 
-@property (nonatomic, retain) UILabel	*label;
-@property (nonatomic, retain) UISwitch	*uswitch;
+@property (nonatomic, retain) IBOutlet UILabel		*label;
+@property (nonatomic, retain) IBOutlet UISwitch		*uswitch;
 
 @end

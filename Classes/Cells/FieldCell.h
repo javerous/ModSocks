@@ -20,16 +20,11 @@
  *
  */
 
-
 #import <UIKit/UIKit.h>
 
 @interface FieldCell : UITableViewCell
-{
-	UILabel			*label;
-	UITextField		*field;
-}
 
-@property (nonatomic, retain) UITextField	*field;
-@property (nonatomic, retain) UILabel		*label;
+@property (nonatomic, retain) IBOutlet UITextField	*field;
+@property (nonatomic, retain) IBOutlet UILabel		*label;
 
 @end

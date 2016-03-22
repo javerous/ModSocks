@@ -24,34 +24,4 @@
 
 @implementation FieldCell
 
-@synthesize label;
-@synthesize field;
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-	if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
-	{
-		CGRect rectLabel = CGRectMake(10, 6, 100, 31);
-		label = [[[UILabel alloc] initWithFrame:rectLabel] autorelease];
-		[self.contentView addSubview:label];
-		
-		CGRect rectField = CGRectMake(rectLabel.size.width, 6, 180, 31);
-		field = [[[UITextField alloc] initWithFrame:rectField] autorelease];
-		[self.contentView addSubview:field];
-		
-		
-		field.borderStyle = UITextBorderStyleRoundedRect;
-		field.font = [UIFont systemFontOfSize:12];
-		field.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-	}
-	return self;
-}
-
-
-- (void)dealloc
-{
-	[super dealloc];
-}
-
-
 @end
