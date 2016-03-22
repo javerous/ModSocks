@@ -253,7 +253,6 @@
                                 <connections>
                                     <outlet property="field" destination="QCi-7i-oAn" id="ll7-c0-r8g"/>
                                     <outlet property="label" destination="1yL-LH-DZX" id="442-q7-ox7"/>
-                                    <segue destination="nU5-jZ-gCO" kind="show" identifier="secure_edit" id="m3H-Bb-AvG"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="JmA-oY-ed1" customClass="SwitchCell">
@@ -295,6 +294,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="1GT-N9-hmc"/>
+                    <connections>
+                        <segue destination="nU5-jZ-gCO" kind="show" identifier="secure_edit" id="LmH-7k-OxK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pw5-7g-I8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

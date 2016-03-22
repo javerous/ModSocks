@@ -128,6 +128,8 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
+
 	if (indexPath.row == 1) // Secure row
 		[self performSegueWithIdentifier:@"secure_edit" sender:self];
 }
@@ -235,6 +237,11 @@
 	}
 	
 	return @"Default";
+}
+
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[aTableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end
