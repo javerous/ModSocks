@@ -1,0 +1,3 @@
+[submodule "Submodules/3proxy"]
+	path = Submodules/3proxy
+	url = https://github.com/z3APA3A/3proxy.git
