@@ -353,7 +353,7 @@ time_t basetime = 0;
 */
 #pragma mark - ServerController - Callbacks
 
-void * f_open(void *idata, struct srvparam *param)
+static void * f_open(void *idata, struct srvparam *param)
 {
 	return idata;
 }
